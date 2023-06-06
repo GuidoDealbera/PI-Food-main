@@ -16,7 +16,7 @@ export default function DetailRecipe() {
   return (
     <div className={styles.container}>
       <NavLink to='/home'>
-        <button className={styles.back}>⬅</button>
+        <button className={styles.back} style={{ display: loading ? "none" : ""}}>⬅</button>
       </NavLink>
       {loading ? <div className={styles.loader}><img src={loader} alt='Loading'/> </div> :
       (<div className={styles.data}>

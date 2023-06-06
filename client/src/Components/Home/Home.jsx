@@ -14,6 +14,7 @@ import {
 import { useEffect, useState } from "react";
 import loader from "../../img/loader-unscreen.gif";
 import Paginado from "../Paginado/Paginado";
+import NavBar from '../NavBar/NavBar'
 
 export default function HomePage(props) {
   const { myRecipes, loading, diets } = useSelector(
@@ -30,10 +31,10 @@ export default function HomePage(props) {
     }
   }, [dispatch, diets])
   const [page, setPage] = useState(1);
-  const finalPage = page * 9; //9 indica la cantidad de recetas que voy a mostrar por página
-  const startPage = finalPage - 9;
+  const finalPage = page * 12; 
+  const startPage = finalPage - 12;
   const actualPage = myRecipes?.slice(startPage, finalPage)
-  const totalPages = Math.ceil(myRecipes.length / 9);
+  const totalPages = Math.ceil(myRecipes.length / 12);
   const handlerPrevPage = () => {
     setPage(page - 1);
   };
@@ -70,6 +71,7 @@ export default function HomePage(props) {
   }
   return (
     <div>
+      <NavBar setPage={setPage}/>
       <div className={styles.options}>
         <select name="Origin" onChange={filterHandler} defaultValue='Filter By Origin'>
           <option disabled >Filter By</option>

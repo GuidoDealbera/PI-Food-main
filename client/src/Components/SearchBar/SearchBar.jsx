@@ -10,6 +10,7 @@ export default function SearchBar (props){
         const {value} = event.target
         if(value){
             dispatch(getQueryRecipe(value))
+            props.setPage(1)
         }else{
             dispatch(getAllRecipes())
             

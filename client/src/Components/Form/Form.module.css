@@ -95,7 +95,7 @@
         rgba(255, 228, 196, 0.479),
         rgba(255, 228, 196, 0.479)
       ),
-      url(C:\Users\Usuario\Desktop\PI-Food-main\client\src\img\fondoCard.png);
+      url(../../img/fondoCard.png);
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 1rem;

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import validation from "./validation";
 import { addRecipe } from "../../Redux/actions";
 import { useNavigate } from "react-router-dom";
+import NavBar from "../NavBar/NavBar";
 
 export default function Form(props) {
   const navigate = useNavigate();
@@ -71,6 +72,8 @@ export default function Form(props) {
     });
   };
   return (
+    <div>
+      <NavBar/>
     <div className={styles.container}>
       <form onSubmit={handlerSubmit}>
         <label>Title: </label>
@@ -164,6 +167,7 @@ export default function Form(props) {
           );
         })}
       </div>
+    </div>
     </div>
   );
 }

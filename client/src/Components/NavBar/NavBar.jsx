@@ -3,7 +3,7 @@ import { NavLink, useLocation } from "react-router-dom"
 import image from '../../img/toHomeLogo.png'
 import SearchBar from "../SearchBar/SearchBar";
 
-export default function NavBar (){
+export default function NavBar (props){
     const location = useLocation();
     return (
         <div className={styles.nav}>
@@ -20,7 +20,7 @@ export default function NavBar (){
             </NavLink>
             </div>
             <div className={styles.searchbar}>
-            {location.pathname !== '/createfood' && location.pathname !== '/about' ? <SearchBar/> : null}
+            {location.pathname !== '/createfood' && location.pathname !== '/about' ? <SearchBar setPage={props.setPage}/> : null}
             </div>
         </div>
     )

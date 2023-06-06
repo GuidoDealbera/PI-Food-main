@@ -28,14 +28,6 @@ const getDiet = async() => {
     }
 };
 
-const dietController = async(req, res) => {
-    try {
-        const dbRes = await getDiet()
-        res.status(200).json({msg: 'Dietas cargadas'})       
-    } catch (error) {
-        res.status(400).json({err: error.message})
-    }
-}
 const getDietsDB = async (req, res) => {
     try {
         const dbRes = await Diet.findAll()
@@ -44,4 +36,4 @@ const getDietsDB = async (req, res) => {
         res.status(400).json({err: error.message})
     }
 }
-module.exports = { getDiet, dietController, getDietsDB };
+module.exports = { getDiet, getDietsDB };
