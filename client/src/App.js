@@ -5,6 +5,10 @@ import LandingPage from "./Components/Landing Page/Landing";
 import HomePage from "./Components/Home/Home";
 import About from "./Components/About/About";
 import Form from "./Components/Form/Form";
+import axios from 'axios'
+
+axios.defaults.baseURL = "https://api.render.com/deploy/srv-ci12q9l269v7c0ploit0?key=tDIxIgC3Ilo"
+//axios.defaults.baseURL = "http://localhost:3001"
 
 
 function App() {

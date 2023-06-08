@@ -21,7 +21,7 @@ export const setLoading = (isLoading) => {
 export const addRecipe = (recipe) => {
   return async function (dispatch) {
     try {
-     const response =  await axios.post("http://localhost:3001/recipe", recipe);
+     const response =  await axios.post("/recipe", recipe);
       return dispatch({ type: ADD_RECIPE, payload: response.data });
     } catch (error) {
       console.log(error.message);
@@ -33,7 +33,7 @@ export const getAllRecipes = () => {
   return async function (dispatch) {
     try {
       dispatch(setLoading(true));
-      const response = await axios.get("http://localhost:3001/recipe");
+      const response = await axios.get("/recipe");
       dispatch({ type: GET_ALL_RECIPES, payload: response.data });
       dispatch(setLoading(false));
     } catch (error) {
@@ -46,7 +46,7 @@ export const getQueryRecipe = (name) => {
     try {
       dispatch(setLoading(true));
       const response = await axios.get(
-        `http://localhost:3001/recipe?name=${name}`
+        `/recipe?name=${name}`
       );
       dispatch({ type: GET_ALL_RECIPES, payload: response.data });
       dispatch(setLoading(false));
@@ -59,7 +59,7 @@ export const getDetail = (id) => {
   return async function (dispatch) {
     try {
       dispatch(setLoading(true));
-      const response = await axios.get(`http://localhost:3001/recipe/${id}`);
+      const response = await axios.get(`/recipe/${id}`);
       dispatch({ type: GET_DETAIL_RECIPE, payload: response.data });
       dispatch(setLoading(false));
     } catch (error) {
@@ -70,7 +70,7 @@ export const getDetail = (id) => {
 export const getDiets = () => {
   return async function (dispatch) {
     try {
-      const response = await axios.get("http://localhost:3001/diets");
+      const response = await axios.get("/diets");
       dispatch({ type: GET_DIETS, payload: response.data });
     } catch (error) {
       alert("Mi base de datos no tiene las dietas solicitadas");
